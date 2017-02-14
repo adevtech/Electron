@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>plugandwork</title>
+  <link rel="stylesheet" href="../node_modules/uikit/dist/css/uikit.min.css">
+  <link rel="stylesheet" href="../node_modules/uikit/dist/css/components/progress.min.css">
+  <link rel="stylesheet" href="css/addon.css">
+  
+</head>
+
+<body>
+  <div id="app">
+    <div class="uk-flex uk-flex-middle uk-flex-space-between uk-flex-wrap uk-margin-top"><i class="uk-icon-spinner"></i>Chargement en cours ...</div>
+  </div>
+
+  <script>
+    const riot = require('riot');
+    var {ipcRenderer, remote} = require('electron');
+    window.$ = window.jQuery = require('jquery');
+    require('uikit')
+    var moment = require('moment')
+    require('../node_modules/moment/locale/fr.js')
+    require('./models')
+    require('./common.js')
+  </script>
+</body>
+</html>
+

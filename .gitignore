@@ -1,0 +1,8 @@
+sync/node_modules/*
+.DS*
+node_modules
+npm-debug.log
+dist/*
+build/*
+release/*
+plugandwork_sync*

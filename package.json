@@ -1,0 +1,124 @@
+{
+  "name": "plugandwork",
+  "version": "0.5.0",
+  "description": "plugandwork sync desktop application.",
+  "main": "app.js",
+  "scripts": {
+    "pack": "build --dir",
+    "pack:win": "build --win --x64",
+    "pack:mac": "build --mac",
+    "pack:appx": "build --appx --x64",
+    "dist": "build",
+    "watch": "gulp watch",
+    "lint-js": "eslint 'src/js/' 'src/js/app.js' 'main.js'",
+    "lint-sass": "sass-lint -c .sass-lint.yml -v -q",
+    "mocha": "mocha --opts src/js/__tests__/__helpers__/mocha.opts",
+    "coverage": "babel-node ./node_modules/istanbul/lib/cli cover node_modules/mocha/bin/_mocha -- --opts src/js/__tests__/__helpers__/mocha.opts",
+    "test": "npm run lint-js && npm run lint-sass && npm run coverage",
+    "start": "electron . –enable-logging"
+  },
+  "build": {
+    "appId": "net.plugandwork.*",
+    "productName": "plugandwork",
+    "forceCodeSigning": true,
+    "compression": "maximum",
+    "mac": {
+      "category": "productivity",
+      "title": "plugandwork",
+      "version": "0.5",
+      "authors": "AGSI",
+      "target": "dmg"
+    },
+    "win": {
+      "title": "plugandwork",
+      "version": "0.5",
+      "authors": "AGSI",
+      "certificateFile": "./dist/certs.p12",
+      "certificatePassword": "codesign"
+    },
+    "appx": {
+      "backgroundColor": "#11A5A7",
+      "publisher": "AGSI",
+      "displayName": "plugandwork",
+      "publisherDisplayName": "plugandwork",
+      "identityName": "plugandwork"
+    }
+  },
+  "keywords": [
+    "plugandwork",
+    "sync"
+  ],
+  "author": "Olivier Dirrenberger",
+  "contributors": [
+    {
+      "name": "Olivier Bonnaure"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://plugandwork.fr"
+  },
+  "homepage": "http://plugandwork.fr",
+  "dependencies": {
+    "async-each": "1.0.1",
+    "auto-launch": "5.0.1",
+    "axios": "=0.14.0",
+    "chokidar": "1.6.1",
+    "electron-gh-releases": "=2.0.4",
+    "node-notifier": "=4.6.1",
+    "electron-osx-sign": "^0.4.2",
+    "electron-positioner": "=3.0.0",
+    "faye": "=1.2.3",
+    "font-awesome": "=4.6.3",
+    "jquery": "^3.1.1",
+    "linkfs": "0.0.2",
+    "memfs": "0.0.9",
+    "moment": "2.17.1",
+    "nedb": "1.8.0",
+    "permessage-deflate": "=0.1.5",
+    "request": "2.79.0",
+    "riot": "2.3.15",
+    "uikit": "^2.27.2",
+    "unionfs": "0.0.9",
+    "websocket-extensions": "=0.1.1"
+  },
+  "devDependencies": {
+    "brunch": "2.8.2",
+    "clean-css-brunch": "^2.0.0",
+    "css-brunch": "^2.6.1",
+    "digest-brunch": "^1.5.1",
+    "html-pages-brunch": "^2.3.1",
+    "javascript-brunch": "^2.0.0",
+    "riot-brunch": "0.0.4",
+    "uglify-js": "^2.7.0",
+    "uglify-js-brunch": "^2.0.1",
+    "babel-cli": "=6.14.0",
+    "babel-core": "=6.14.0",
+    "babel-eslint": "=6.1.2",
+    "babel-preset-es2015": "=6.14.0",
+    "babel-preset-react": "=6.11.1",
+    "babel-preset-stage-0": "=6.5.0",
+    "babelify": "=7.3.0",
+    "browserify": "=13.0.1",
+    "chai": "=3.5.0",
+    "electron": "=1.3.4",
+    "electron-builder": "^10.15.1",
+    "eslint": "^3.3.1",
+    "gulp": "=3.9.1",
+    "gulp-sass": "=2.3.1",
+    "gulp-uglify": "=1.5.3",
+    "gulp-util": "=3.0.7",
+    "istanbul": "v1.1.0-alpha.1",
+    "jsdom": "=9.4.2",
+    "lodash.assign": "=4.2.0",
+    "mocha": "=3.0.2",
+    "nock": "=8.0.0",
+    "redux-mock-store": "=1.1.4",
+    "sass-lint": "=1.9.1",
+    "sinon": "=1.17.5",
+    "sinon-chai": "=2.8.0",
+    "vinyl-buffer": "=1.0.0",
+    "vinyl-source-stream": "=1.1.0",
+    "watchify": "=3.7.0"
+  }
+}
